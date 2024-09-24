@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci0h6ovtvoa2w"]
+
+[ext_resource type="Script" path="res://player_mov.gd" id="1_5v3f5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_niij3"]
+sky_top_color = Color(0.617715, 0.681104, 0.769448, 1)
+sky_horizon_color = Color(0.704429, 0.712526, 0.725612, 1)
+ground_horizon_color = Color(0.704429, 0.712526, 0.725612, 1)
+
+[sub_resource type="Sky" id="Sky_bmyvn"]
+sky_material = SubResource("ProceduralSkyMaterial_niij3")
+
+[sub_resource type="Environment" id="Environment_bxnq1"]
+background_mode = 2
+sky = SubResource("Sky_bmyvn")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xr81y"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yj4hn"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bxnq1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.300706, -0.890967, 0.340227, 0, 0.356738, 0.934204, -0.953717, 0.280921, -0.107273, 0, 0, 0)
+light_color = Color(1, 1, 0.898039, 1)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0314806, 0)
+use_collision = true
+size = Vector3(17, 0.001, 17)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5332, 0)
+script = ExtResource("1_5v3f5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_xr81y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_yj4hn")
+
+[node name="Head" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2116, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99883, 0)
