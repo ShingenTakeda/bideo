@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://hg1vbkiuthn4" path="res://Entities/player.tscn" id="2_0hs25"]
 [ext_resource type="PackedScene" uid="uid://hyahnf0lh3it" path="res://Entities/virus.tscn" id="2_xcprk"]
-[ext_resource type="Material" uid="uid://by83ckrct1e7w" path="res://models/Dirty Black and white checker Tiles.tres" id="3_idasf"]
+[ext_resource type="Material" uid="uid://by83ckrct1e7w" path="res://assets/materials/Dirty Black and white checker Tiles.tres" id="3_idasf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_niij3"]
 sky_top_color = Color(0.863251, 0.000118498, 0.709555, 1)
@@ -11,13 +11,13 @@ sky_curve = 0.212132
 ground_horizon_color = Color(0.704429, 0.712526, 0.725612, 1)
 sun_curve = 0.00662914
 
-[sub_resource type="Sky" id="Sky_bmyvn"]
+[sub_resource type="Sky" id="Sky_ivemq"]
 sky_material = SubResource("ProceduralSkyMaterial_niij3")
 
 [sub_resource type="Environment" id="Environment_bxnq1"]
 background_mode = 2
 background_color = Color(0.704532, 0.16087, 0.766681, 1)
-sky = SubResource("Sky_bmyvn")
+sky = SubResource("Sky_ivemq")
 ambient_light_source = 1
 ambient_light_color = Color(1, 1, 1, 1)
 glow_enabled = true

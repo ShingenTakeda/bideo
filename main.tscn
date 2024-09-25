@@ -1,32 +1,47 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci0h6ovtvoa2w"]
+[gd_scene load_steps=8 format=3 uid="uid://ci0h6ovtvoa2w"]
 
-[ext_resource type="PackedScene" uid="uid://6clmskpio380" path="res://Entities/player.tscn" id="1_027ei"]
+[ext_resource type="PackedScene" uid="uid://hg1vbkiuthn4" path="res://Entities/player.tscn" id="1_027ei"]
 [ext_resource type="Material" uid="uid://c6gp75pkn1a8h" path="res://outside.tres" id="1_j2jhm"]
-[ext_resource type="Material" uid="uid://ccfq50cc0hawp" path="res://inside_main.tres" id="2_htd0j"]
+[ext_resource type="Material" uid="uid://by83ckrct1e7w" path="res://assets/materials/Dirty Black and white checker Tiles.tres" id="2_wnfvd"]
+[ext_resource type="PackedScene" uid="uid://hyahnf0lh3it" path="res://Entities/virus.tscn" id="3_5higx"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_niij3"]
-sky_top_color = Color(0.617715, 0.681104, 0.769448, 1)
-sky_horizon_color = Color(0.704429, 0.712526, 0.725612, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w6fi0"]
+sky_top_color = Color(0.863251, 0.000118498, 0.709555, 1)
+sky_horizon_color = Color(0.637236, 0.0992772, 0.803273, 1)
+sky_curve = 0.212132
 ground_horizon_color = Color(0.704429, 0.712526, 0.725612, 1)
+sun_curve = 0.00662914
 
 [sub_resource type="Sky" id="Sky_bmyvn"]
-sky_material = SubResource("ProceduralSkyMaterial_niij3")
+sky_material = SubResource("ProceduralSkyMaterial_w6fi0")
 
-[sub_resource type="Environment" id="Environment_bxnq1"]
+[sub_resource type="Environment" id="Environment_mjmuo"]
 background_mode = 2
+background_color = Color(0.704532, 0.16087, 0.766681, 1)
 sky = SubResource("Sky_bmyvn")
-tonemap_mode = 2
+ambient_light_source = 1
+ambient_light_color = Color(1, 1, 1, 1)
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.009
+volumetric_fog_length = 301.13
+volumetric_fog_ambient_inject = 0.57
 
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_bxnq1")
+environment = SubResource("Environment_mjmuo")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.300706, -0.890967, 0.340227, 0, 0.356738, 0.934204, -0.953717, 0.280921, -0.107273, 0, 0, 0)
 light_color = Color(1, 1, 0.898039, 1)
 shadow_enabled = true
+
+[node name="Virus" parent="." instance=ExtResource("3_5higx")]
+transform = Transform3D(-0.997702, 0, 0.0677541, 0, 1, 0, -0.0677541, 0, -0.997702, -1.21791, 1.96334, -1.9777)
+
+[node name="Player" parent="." instance=ExtResource("1_027ei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078517, 2.54914, 2.62478)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
@@ -42,13 +57,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47878, 1.91855, -0.5)
 operation = 2
 use_collision = true
 size = Vector3(31, 4, 26)
-material = ExtResource("2_htd0j")
+material = ExtResource("2_wnfvd")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D"]
 transform = Transform3D(4.37111e-08, -1.52586e-10, 1, -0.00349077, -0.999994, 0, 0.999994, -0.00349077, -4.37114e-08, 4.7598, 4.19225, -13.9927)
 operation = 2
 polygon = PackedVector2Array(-2, 0, 0, 1, 1, 1, 1, 0)
 depth = 10.68
-
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_027ei")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.29058, 0)

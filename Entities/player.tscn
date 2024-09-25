@@ -23,5 +23,5 @@ shape = SubResource("CapsuleShape3D_xpvep")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26717, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.970662, 0, 0.240448, -0.0574976, 0.970988, 0.232111, -0.233472, -0.239127, 0.942502, 0, 0, 0)
 target_position = Vector3(0.5, 0.5, -2)
