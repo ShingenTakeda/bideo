@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://hyahnf0lh3it"]
+
+[ext_resource type="Script" path="res://Entities/virus.gd" id="1_jr7sy"]
+[ext_resource type="PackedScene" uid="uid://dva5dj2etgvhp" path="res://models/modelo_virus.blend" id="2_fha8q"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2v2dk"]
+radius = 0.539991
+
+[node name="Virus" type="CharacterBody3D"]
+script = ExtResource("1_jr7sy")
+
+[node name="modelo_virus" parent="." instance=ExtResource("2_fha8q")]
+transform = Transform3D(0.587299, 0, 0, 0, 0.587299, 0, 0, 0, 0.587299, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.526977, 0)
+shape = SubResource("SphereShape3D_2v2dk")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(0.96343, -0.0171428, 0.267413, -0.0481698, 0.970615, 0.235768, -0.263596, -0.240027, 0.934293, 0, 0.50102, 0)
+target_position = Vector3(0.5, 0.5, -2)

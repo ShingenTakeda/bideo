@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cljp4181mqj52"]
+
+[ext_resource type="PackedScene" uid="uid://dva5dj2etgvhp" path="res://models/modelo_virus.blend" id="1_4ie43"]
+
+[node name="modelo_virus" instance=ExtResource("1_4ie43")]

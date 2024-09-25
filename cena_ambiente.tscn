@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci0h6ovtvoa2w"]
+
+[ext_resource type="PackedScene" uid="uid://hg1vbkiuthn4" path="res://Entities/player.tscn" id="2_0hs25"]
+[ext_resource type="PackedScene" uid="uid://hyahnf0lh3it" path="res://Entities/virus.tscn" id="2_xcprk"]
+[ext_resource type="Material" uid="uid://by83ckrct1e7w" path="res://models/Dirty Black and white checker Tiles.tres" id="3_idasf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_niij3"]
+sky_top_color = Color(0.863251, 0.000118498, 0.709555, 1)
+sky_horizon_color = Color(0.637236, 0.0992772, 0.803273, 1)
+sky_curve = 0.212132
+ground_horizon_color = Color(0.704429, 0.712526, 0.725612, 1)
+sun_curve = 0.00662914
+
+[sub_resource type="Sky" id="Sky_bmyvn"]
+sky_material = SubResource("ProceduralSkyMaterial_niij3")
+
+[sub_resource type="Environment" id="Environment_bxnq1"]
+background_mode = 2
+background_color = Color(0.704532, 0.16087, 0.766681, 1)
+sky = SubResource("Sky_bmyvn")
+ambient_light_source = 1
+ambient_light_color = Color(1, 1, 1, 1)
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.08
+volumetric_fog_length = 301.13
+volumetric_fog_ambient_inject = 0.57
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bxnq1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.300706, -0.890967, 0.340227, 0, 0.356738, 0.934204, -0.953717, 0.280921, -0.107273, 0, 0, 0)
+light_color = Color(1, 1, 0.898039, 1)
+light_energy = 0.6
+light_volumetric_fog_energy = 0.4
+light_angular_distance = 0.15
+shadow_enabled = true
+
+[node name="Virus" parent="." instance=ExtResource("2_xcprk")]
+transform = Transform3D(-0.492074, 0, -0.870553, 0, 1, 0, 0.870553, 0, -0.492074, -1.21791, 1.16053, -1.9777)
+
+[node name="Player" parent="." instance=ExtResource("2_0hs25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078517, 1.99435, 2.62478)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(47.6127, 0.001, 58.4393)
+material = ExtResource("3_idasf")

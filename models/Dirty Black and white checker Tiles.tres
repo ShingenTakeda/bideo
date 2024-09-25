@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://by83ckrct1e7w"]
+
+[ext_resource type="Texture2D" uid="uid://b3pbwyf7ja0eb" path="res://models/textures/Dirty_Black_and_white_checker_Tiles_Base_Color.jpg" id="1_cwmsk"]
+[ext_resource type="Texture2D" uid="uid://br07rkr237cab" path="res://models/textures/Dirty_Black_and_white_checker_Tiles_Roughness.jpg" id="2_m5hjg"]
+[ext_resource type="Texture2D" uid="uid://jwrk3xsy15j5" path="res://models/textures/Dirty_Black_and_white_checker_Tiles_Normal.jpg" id="3_yp4bb"]
+
+[resource]
+resource_name = "Dirty Black and white checker Tiles"
+cull_mode = 2
+albedo_texture = ExtResource("1_cwmsk")
+metallic_texture = ExtResource("2_m5hjg")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_m5hjg")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_yp4bb")
+uv1_triplanar = true
