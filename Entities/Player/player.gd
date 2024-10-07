@@ -35,8 +35,8 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if $RayCast3D.is_colliding():
-		print('Colidiu com: ', $RayCast3D.get_collider().name)
+	#if $RayCast3D.is_colliding():
+	#	print('Colidiu com: ', $RayCast3D.get_collider().name)
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and event is InputEventFromWindow:

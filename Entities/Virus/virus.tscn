@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://hyahnf0lh3it"]
+[gd_scene load_steps=5 format=3 uid="uid://hyahnf0lh3it"]
 
-[ext_resource type="Script" path="res://Entities/virus.gd" id="1_jr7sy"]
-[ext_resource type="PackedScene" uid="uid://dva5dj2etgvhp" path="res://models/modelo_virus.blend" id="2_fha8q"]
+[ext_resource type="Script" path="res://Entities/Virus/virus.gd" id="1_jr7sy"]
+[ext_resource type="PackedScene" uid="uid://bguksb7ru0fws" path="res://models/modelo_virus.blend" id="2_fha8q"]
+[ext_resource type="Script" path="res://Entities/Virus/StateMachine.gd" id="3_o4d6t"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2v2dk"]
 radius = 0.539991
@@ -19,3 +20,6 @@ shape = SubResource("SphereShape3D_2v2dk")
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(0.96343, -0.0171428, 0.267413, -0.0481698, 0.970615, 0.235768, -0.263596, -0.240027, 0.934293, 0, 0.50102, 0)
 target_position = Vector3(0.5, 0.5, -2)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_o4d6t")

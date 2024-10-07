@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ci0h6ovtvoa2w"]
 
-[ext_resource type="PackedScene" uid="uid://hg1vbkiuthn4" path="res://Entities/player.tscn" id="2_0hs25"]
-[ext_resource type="PackedScene" uid="uid://hyahnf0lh3it" path="res://Entities/virus.tscn" id="2_xcprk"]
+[ext_resource type="PackedScene" uid="uid://hg1vbkiuthn4" path="res://Entities/Player/player.tscn" id="2_0hs25"]
+[ext_resource type="PackedScene" uid="uid://hyahnf0lh3it" path="res://Entities/Virus/virus.tscn" id="2_xcprk"]
 [ext_resource type="Material" uid="uid://by83ckrct1e7w" path="res://assets/materials/Dirty Black and white checker Tiles.tres" id="3_idasf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_niij3"]

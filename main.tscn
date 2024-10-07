@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://ci0h6ovtvoa2w"]
 
-[ext_resource type="PackedScene" uid="uid://hg1vbkiuthn4" path="res://Entities/player.tscn" id="1_027ei"]
+[ext_resource type="PackedScene" uid="uid://hg1vbkiuthn4" path="res://Entities/Player/player.tscn" id="1_027ei"]
 [ext_resource type="Material" uid="uid://c6gp75pkn1a8h" path="res://outside.tres" id="1_j2jhm"]
 [ext_resource type="Material" uid="uid://by83ckrct1e7w" path="res://assets/materials/Dirty Black and white checker Tiles.tres" id="2_wnfvd"]
-[ext_resource type="PackedScene" uid="uid://hyahnf0lh3it" path="res://Entities/virus.tscn" id="3_5higx"]
+[ext_resource type="PackedScene" uid="uid://hyahnf0lh3it" path="res://Entities/Virus/virus.tscn" id="3_5higx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w6fi0"]
 sky_top_color = Color(0.863251, 0.000118498, 0.709555, 1)
